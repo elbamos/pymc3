@@ -280,7 +280,7 @@ class Interval(ElemwiseTransform):
 
     def backward(self, x):
         a, b = self.a, self.b
-        sigmoid_x = at.nnet.sigmoid(x)
+        sigmoid_x = at.sigmoid(x)
         r = sigmoid_x * b + (1 - sigmoid_x) * a
         return r
 

@@ -408,7 +408,7 @@ class Bernoulli(Discrete):
             self._logit_p = logit(p)
         else:
             self._is_logit = True
-            self.p = at.nnet.sigmoid(floatX(logit_p))
+            self.p = at.sigmoid(floatX(logit_p))
             self._logit_p = at.as_tensor_variable(logit_p)
 
         self.mode = at.cast(tround(self.p), "int8")
